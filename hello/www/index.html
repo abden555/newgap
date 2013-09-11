@@ -30,9 +30,12 @@
     function querySuccess(tx, results) {
         var len = results.rows.length;
         console.log("DEMO table: " + len + " rows found.");
+		var htm = '';
         for (var i=0; i<len; i++){
             console.log("Row = " + i + " ID = " + results.rows.item(i).id + " Data =  " + results.rows.item(i).data);
+			htm +="Row = " + i + " ID = " + results.rows.item(i).id + " Data =  " + results.rows.item(i).data;
         }
+		$("#myID").html(htm);
     }
 
     // Transaction error callback
@@ -60,5 +63,6 @@
   <body>
     <h1>Example</h1>
     <p>Database</p>
+    <div id="myID"></div>
   </body>
 </html>
